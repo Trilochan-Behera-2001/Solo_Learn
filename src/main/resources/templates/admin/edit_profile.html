@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="admin/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+
+		<div class="container text-center">
+
+			<div class="row justify-content-center">
+
+				<div class="col-md-10">
+
+					<div class="card mr-1 ml-3">
+
+						<form enctype="multipart/form-data" method="POST"
+							th:action="@{/admin/process-update}" class="m-2"
+							th:object="${user}">
+
+							<div class="card-body">
+
+								<img src="" style="height: 200px; width: 200px;"
+									class="my_profile_picture" th:src="@{ '/img/'+${user.profile}}"
+									alt="profile photo" />
+
+								<div class="container mt-3">
+
+									<table class="table table-hover">
+
+
+										<thead>
+											<tr>
+												<th scope="row">#ID</th>
+												<td class="text-primary">ADMIN423[[${user.uid}]] <input
+													type="hidden" th:value="${user.uid}" name="uid">
+
+												</td>
+											</tr>
+										</thead>
+
+
+										<tbody>
+
+											<tr class="p-3">
+
+												<th scope="row">Name</th>
+
+												<td class="text-primary">
+
+													<div class="input-group flex-nowrap">
+														<input th:value="${user.name}" type="text" name="name"
+															class="form-control" required>
+													</div>
+
+												</td>
+
+											</tr>
+
+											<tr>
+
+												<th scope="row">Email</th>
+
+												<td class="text-primary">
+
+													<div class="input-group flex-nowrap">
+														<input th:value="${user.email}" type="text" name="email"
+															class="form-control" required>
+													</div>
+
+												</td>
+
+											</tr>
+
+
+											<tr>
+
+												<th scope="row">Profession</th>
+
+												<td class="text-primary">
+
+													<div class="input-group flex-nowrap">
+														<input th:value="${user.profession}" type="text"
+															name="profession" class="form-control" required>
+													</div>
+
+												</td>
+
+											</tr>
+
+
+											<tr>
+
+												<th scope="row">Role</th>
+
+												<td class="text-primary">
+
+													<div class="input-group flex-nowrap">
+														<input th:value="${user.role}" type="text"
+															name="profession" class="form-control" disabled required>
+													</div>
+
+												</td>
+
+											</tr>
+
+											<tr>
+
+												<th scope="row">Account Active</th>
+
+												<td class="text-primary">
+
+													<div class="input-group flex-nowrap">
+														<input th:value="${user.enabled}" type="text"
+															name="profession" class="form-control" disabled required>
+													</div>
+
+												</td>
+
+											</tr>
+
+											<tr>
+
+												<th scope="row">About</th>
+
+												<td class="text-primary">
+
+
+													<div class="input-group mb-3">
+														<textarea th:text="${user.about}"
+															class="form-control mt-2" name="about" rows="7"
+															required></textarea>
+													</div>
+
+
+												</td>
+
+											</tr>
+
+
+											<tr>
+
+												<th scope="row">choose new pic ..</th>
+
+												<td class="text-primary">
+
+													<div class="input-group mb-3">
+
+														<label class="input-group-text" for="upload">Upload</label>
+														<input type="file" class="form-control" id="upload"
+															name="imageName">
+													</div>
+
+
+												</td>
+
+											</tr>
+
+
+										</tbody>
+
+
+									</table>
+
+									<div class="container text-center">
+										<button class="btn btn-outline-info">Save</button>
+									</div>
+
+								</div>
+
+							</div>
+
+						</form>
+
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</section>
+
+</body>
+</html>

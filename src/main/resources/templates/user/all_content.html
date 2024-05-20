@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+		<div class="card mr-1 ml-3">
+
+
+			<div class="card-body">
+
+				<h3 class="text-center text-secondary fst-italic fw-lighter">All
+					Contents</h3>
+
+
+				<div class="container">
+
+					<div class="row justify-content-center">
+
+
+						<div class="col-lg-4 p-5" th:each=" content : ${contents}">
+
+							<div class="card link-hover text-center" style="width: 18rem;">
+
+								<div style="height: 160px;">
+
+									<img th:src="@{'/img/'+${content.pic}}"
+										class="card-img-top" alt="..." height="100%">
+
+								</div>
+
+								<div class="card-body text-primary">
+									<h5 class="card-title">[[${content.title}]]</h5>
+									<p class="card-text">[[${content.content}]]</p>
+									<p class="post-date">[[${content.date}]]</p>
+								</div>
+
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item"><a th:href="${content.link1}"
+										class="card-link a-link">[[${content.name1}]]</a></li>
+									<li class="list-group-item"><a th:href="${content.link2}"
+										class="card-link a-link">[[${content.name2}]]</a></li>
+									<li class="list-group-item"><a th:href="${content.link3}"
+										class="card-link a-link">[[${content.name3}]]</a></li>
+								</ul>
+
+							</div>
+
+						</div>
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<script>
+		
+		$(document).ready(() => {
+			
+			$(".item").removeClass("active");
+			
+			$("#content-link").addClass("active");
+			
+			} );
+		
+		</script>
+
+	</section>
+
+</body>
+</html>

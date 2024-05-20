@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="admin/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+		<div class="card mr-1 ml-3">
+
+
+			<div class="card-body">
+
+				<h3 class="text-center text-secondary fst-italic fw-lighter">All Users</h3>
+
+
+				<div class="container">
+
+					<div class="row justify-content-center">
+
+
+						<div th:each="u : ${users}" class="col-lg-3 col-md-12 mt-2">
+
+							<div class="card shadow rounded" style="background: #e2e2e2;">
+
+								<div class="card-header text-center" >
+
+
+									<img th:src="@{'/img/'+${u.profile} }"
+										class="card-img-top my_profile_picture mt-3"
+										alt="Card image cap" style="width: 160px; height: 160px;">
+
+
+								</div>
+
+								<div
+									class="card-body bg-transparent border-success text-center" >
+
+									<h5 class="card-title">Name &nbsp;&nbsp;:&nbsp;&nbsp;
+										[[${u.name}]]</h5>
+									<p class="card-text">Profession &nbsp;&nbsp;:&nbsp;&nbsp;
+										[[${u.profession}]]</p>
+
+									<div class="container text-center mt-2">
+
+										<img th:src="@{'/img/'+${u.verified_img}}"
+											style="width: 25px;" />
+
+										<p>[[${u.adminVerify}]]</p>
+
+									</div>
+
+								</div>
+
+								<div class="card-footer bg-transparent border-success text-center">
+
+									<a href="#" th:href="@{'/admin/'+${u.uid}+'/user'}"
+										class="text-info a-link">[[${u.email}]]</a>
+
+								</div>
+
+							</div>
+
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<script>
+		
+		$(document).ready(() => {
+			
+			$(".item").removeClass("active");
+			
+			$("#all-users").addClass("active");
+			
+			} );
+		
+		</script>
+
+	</section>
+
+</body>
+</html>

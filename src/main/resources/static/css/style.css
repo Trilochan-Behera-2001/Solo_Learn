@@ -1,0 +1,290 @@
+@charset "ISO-8859-1";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* .roboto-condensed-body {
+ 
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+body {
+	background: #e2e2e2 !important;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto Condensed", sans-serif;
+}
+
+.a-link {
+	text-decoration: none;
+	color: red;
+}
+
+.primary-background {
+	background: rgb(2, 13, 83) !important;
+}
+
+.navbar-back {
+	background: rgb(2, 13, 83) !important;
+}
+
+.content-padding {
+	padding: 46px 0;
+}
+
+.banner-background {
+	clip-path: polygon(50% 0%, 100% 0, 100% 93%, 68% 100%, 36% 95%, 0 100%, 0 0);
+}
+
+.my_profile_picture {
+	width: 100%;
+	height: 35px;
+	object-fit: cover;
+	border-radius: 50%;
+	margin: auto;
+}
+
+.input-transparent{
+	background:transparent;
+}
+
+/* contact us page */
+.location{
+   width: 80%;
+   margin: auto;
+   padding: 80px 0;
+}
+.location iframe{
+   width: 100%;
+}
+
+/*show-blog-page.css */
+.post-title {
+	font-weight: 100;
+	color: #f44336;
+	font-size: 30px;
+}
+
+
+
+.clip-path {
+	clip-path: polygon(64% 36%, 100% 13%, 100% 100%, 0 100%, 0 42%, 35% 15%);
+}
+
+.main-content {
+	box-shadow: 1px 1px 15px black;
+}
+
+.post-content {
+	font-weight: 100;
+	font-size: 25px;
+}
+
+.post-date {
+	font-style: italic;
+	font-weight: bold;
+}
+
+.row-user {
+	border: 1px solod #e2e2e2;
+	padding-top: 15px;
+}
+
+.form-div {
+	width: 320px;
+	margin: auto;
+	text-align: left;
+	color: white;
+	position: relative;
+}
+
+.lengend-f {
+	text-align: center;
+	color: blue;
+}
+
+.fieldset-f {
+	padding: 5px 36px;
+	border: 1px solid blue;
+}
+
+#frm {
+	width: 100%;
+}
+
+#frm label {
+	color: blue;
+}
+
+.footer {
+	width: 100%;
+	text-align: center;
+	padding: 30px 0;
+}
+
+.footer h4 {
+	margin-bottom: 25px;
+	margin-top: 20px;
+	font-weight: 600;
+}
+
+.icons .fa {
+	color: #f44336;
+	margin: 0 13px;
+	cursor: pointer;
+	padding: 18px 0;
+}
+
+.fa-heart {
+	color: #1fd145;
+}
+
+/* cta */
+.cta {
+	width: 80%;
+	margin: 100px auto;
+	text-align: center;
+	background-image: linear-gradient(rgba(2, 12, 206, 0.7),
+		rgba(31, 87, 255, 0.582)), url(./images/ctaback.jpg);
+	background-position: center;
+	background-size: cover;
+	border-radius: 10px;
+	padding: 100px 0;
+}
+
+.cta h1 {
+	color: #fff;
+	margin-bottom: 40px;
+	padding: 0;
+}
+
+@media ( max-width :700px) {
+	.cta h1 {
+		font-size: 24px;
+	}
+}
+
+.hero_btn {
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	border: 1px solid #f44336;
+	background: rgb(248, 91, 69) !important;
+	padding: 8px 16px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.hero_btn:hover {
+	background: rgb(255, 255, 255) !important;
+	color: rgb(0, 0, 128);
+	transition: 1s;
+}
+
+.page-background {
+	clip-path: polygon(100% 0%, 100% 99%, 75% 84%, 42% 99%, 0 80%, 0 0);
+}
+
+/* footer */
+.footer-background-con {
+	background-image: url("./images/pattern.png");
+	background-position: center;
+	background-size: 300px;
+	width: 100%;
+	background-color: #00f2ffa8;
+	font-family: 'Baloo Bhai 2', cursive;
+	font-size: 25px;
+	height: 60px;
+	padding: 10px 30px;
+}
+
+.footer-background-copy {
+	text-align: right;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.696);
+	font-family: 'Baloo Bhai 2', cursive;
+	font-size: 15px;
+	height: 60px;
+	padding: 13px 35px;
+	margin-bottom: 10px;
+	color: white;
+}
+
+.my-card {
+	padding: 20px;
+	background: #fff;
+	color: black;
+	height: 100%;
+}
+
+.my_profile_picture {
+	width: 35px;
+	height: 35px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+/*side bar*/
+.sidebar {
+	width: 18%;
+	background: white;
+	height: 100%;
+	position: fixed;
+	padding-top: 45px;
+	z-index: 123;
+}
+
+.sidebar a {
+	display: block;
+	width: 100%;
+	padding: 15px 25px;
+	text-decoration: none;
+	color: gray;
+}
+
+.sidebar a:hover {
+	background: #e2e2e2;
+}
+
+.sidebar .divider {
+	height: .5px;
+	width: 100%;
+	background: #e2e2e2;
+	margin-top: 10px;
+}
+
+.sidebar .crossBtn {
+	position: absolute;
+	top: 0;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+@media only screen and (max-width:600px) {
+	.sidebar {
+		display: none;
+		width: 80% !important;
+		background: white;
+		height: 100vh;
+		position: fixed;
+		padding-top: 20px;
+	}
+	.content {
+		margin-left: 0% !important;
+	}
+}
+
+.content {
+	margin-left: 20%;
+}
+
+.active {
+	background: rgb(2, 13, 83) !important;
+	color: white !important;
+}

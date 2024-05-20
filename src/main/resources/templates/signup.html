@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+
+		<main class="primary-background p-1 banner-background"
+			style="padding-bottom: 90px;">
+
+			<div class="container">
+
+				<div class="col-md-6 offset-md-3">
+
+					<div class="card">
+
+						<div class="card-header text-center primary-background text-white">
+							<span class="fa  fa-3x fa-user-circle"></span> <br> Register
+							here
+						</div>
+
+						
+
+						<div class="card-body">
+						
+						<!-- Message shown in webpage  -->
+						<th:block th:if="${session.msg}">
+
+							<div class="alert text-center " role="alert"
+								th:classappend="${session.type}">[[${session.msg}]]</div>
+
+							<th:block th:text="${@userServiceImpl.removeSessionMessage()}"></th:block>
+
+						</th:block>
+						
+						
+							<form th:action="@{/register}" method="POST" th:object="${user}">
+
+								<div class="mb-3">
+									<label for="user-name" class="form-label">User name</label> <input
+										type="text" name="name" th:field="*{name}" class="form-control" id="user-name"
+										placeholder="Enter name" th:classappend="${#fields.hasErrors('name')} ? is-invalid : ' ' " 	aria-describedby="validationServerName" >
+									
+									<div id="validationServerName" class="invalid-feedback"
+									th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
+									Name Error</div>
+								</div>
+
+								<div class="mb-3">
+									<label for="exampleInputEmail1" class="form-label">Email
+										address</label> <input type="email" name="email" th:field="*{email}" class="form-control"
+										id="exampleInputEmail1"
+										placeholder="Enter your Email address" th:classappend="${#fields.hasErrors('email')} ? is-invalid : ' ' " aria-describedby="validationServerEmail">
+									
+									<div id="validationServerEmail" class="form-text">We'll never share
+										your email with anyone else.</div>
+										
+									
+									<div id="validationServerEmail" class="invalid-feedback"
+									th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+									Email Error</div>
+									
+								</div>
+
+								<div class="mb-3">
+									<label for="exampleInputPassword1" class="form-label">Password</label>
+									<input type="password" name="password" th:value="${user.password}" class="form-control"
+										id="exampleInputPassword1" placeholder="Enter your password" th:classappend="${#fields.hasErrors('password')} ? is-invalid : ' ' " aria-describedby="validationServerPassword">
+										
+										
+									<div id="validationServerPassword" class="invalid-feedback"
+									th:if="${#fields.hasErrors('password')}"
+									th:errors="*{password}">Password Error</div>
+									
+								</div>
+
+								<div class="mb-3">
+									<label for="user-name" class="form-label">Your
+										profession</label> <input type="text" name="profession" th:field="*{profession}"
+										class="form-control" id="user-name"
+										placeholder="Enter your profession" th:classappend="${#fields.hasErrors('profession')} ? is-invalid : ' ' " aria-describedby="validationServerprofession">
+								
+									<div id="validationServerprofession" class="invalid-feedback"
+									th:if="${#fields.hasErrors('profession')}"
+									th:errors="*{profession}">profession Error</div>
+									
+								</div>
+
+								<div class="mb-3">
+									<textarea name="about"  th:value="${user.about}" class="form-control" rows="5"
+										placeholder="Enter something about your self" th:classappend="${#fields.hasErrors('about')} ? is-invalid : ' ' " aria-describedby="validationServerAbout"></textarea>
+								
+									<div id="validationServerAbout" class="invalid-feedback"
+									th:if="${#fields.hasErrors('about')}" th:errors="*{about}">
+									About Error</div>
+									
+								</div>
+
+								<div class="mb-3 form-check">
+									<input type="checkbox" name="agrement" class="form-check-input"
+										id="exampleCheck1"> <label class="form-check-label"
+										for="exampleCheck1">agree terms and condition</label>
+								</div>
+
+								<br>
+								<div class="container text-center" id="loader"
+									style="display: none">
+									<span class="fa fa-refresh  fa-spin fa-4x"></span>
+									<h4>Please wait ...</h4>
+								</div>
+
+								<button id="submit-btn" type="submit"
+									class="btn btn-primary hero_btn">Register</button>
+
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+			<br>
+			<br>
+
+		</main>
+
+
+	</section>
+
+</body>
+</html>

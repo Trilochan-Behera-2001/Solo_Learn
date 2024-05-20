@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+		<main
+			class="d-flex align-items-center primary-background banner-background "
+			style="height: 70vh;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 offset-md-4">
+
+						<div class="card mt-4 mb-5">
+
+							<div
+								class="card-header primary-background text-white text-center">
+								<br> <span class="fa fa-user-plus fa-3x"></span>
+								<p>Login here</p>
+							</div>
+
+
+							<div class="card-body">
+
+								<!-- login error message -->
+								<th:block th:if="${param.error}">
+
+									<div class="alert text-center alert-danger" role="alert">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</div>
+
+								</th:block>
+
+								<!-- logout message -->
+								<th:block th:if="${param.logout}">
+
+									<div class="alert text-center alert-success" role="alert">You
+										have logout successfully ..</div>
+
+								</th:block>
+
+								<!-- password change message -->
+								<th:block th:if="${param.change}">
+
+									<div class="alert text-center alert-success" role="alert">
+
+										<p th:text="${param.change}"></p>
+
+									</div>
+
+								</th:block>
+
+								<form th:action="@{/formLogin}" method="POST">
+
+									<div class="mb-3">
+										<label for="exampleInputEmail1" class="form-label">Email
+											address</label> <input type="email" name="username" required
+											class="form-control" id="exampleInputEmail1"
+											aria-describedby="emailHelp">
+										<div id="emailHelp" class="form-text">We'll never share
+											your email with anyone else.</div>
+									</div>
+
+									<div class="mb-3">
+										<label for="exampleInputPassword1" class="form-label">Password</label>
+										<input type="password" name="password" required
+											class="form-control" id="exampleInputPassword1">
+									</div>
+
+									<div class="container text-center">
+										<button type="submit" class="btn btn-primary hero_btn">Login</button>
+									</div>
+
+
+								</form>
+								
+							</div>
+							
+						</div>
+
+					</div>
+					
+				</div>
+				
+			</div>
+			
+			
+		</main>
+
+
+
+	</section>
+
+</body>
+</html>

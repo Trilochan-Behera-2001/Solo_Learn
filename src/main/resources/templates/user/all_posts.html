@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+		<div class="card mr-1 ml-3">
+
+
+			<div class="card-body">
+
+				<h3 class="text-center text-secondary fst-italic fw-lighter">All Posts</h3>
+
+
+				<div class="container">
+
+					<div class="row justify-content-center">
+					
+					
+					<div th:each="p : ${posts}"  class="col-lg-4 col-md-12 mt-2">
+
+						<div class="card" style="width: 18rem; height: 31rem">
+						
+							<img th:src="@{'/img/'+${p.pic} }" class="card-img-top"
+								alt="Card image cap" style="width: 100%; height: 140px;">
+								
+							<div class="card-body">
+
+								<h5 class="card-title text-primary" >[[${p.title}]]</h5>
+								<p class="card-text">[[${p.content}]]</p>
+
+							</div>
+
+							<div class="card-footer primary-background text-center">
+								<a href="#" th:href="@{'/user/'+${p.pid}+'/posts'}"
+									class="btn btn-outline-light btn-sm ">Read more...</a>
+							</div>
+
+						</div>
+
+					</div>
+					
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<script>
+		
+		$(document).ready(() => {
+			
+			$(".item").removeClass("active");
+			
+			$("#all_posts").addClass("active");
+			
+			} );
+		
+		</script>
+
+	</section>
+
+</body>
+</html>

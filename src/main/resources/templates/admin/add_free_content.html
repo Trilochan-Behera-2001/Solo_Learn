@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{ admin/base::Layout(~{::section}) }">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+		<div class="card mr-1 ml-3">
+
+
+			<div class="card-body">
+
+				<h3 class="text-center text-secondary fst-italic fw-lighter">Add Content</h3>
+
+
+				<div class="container">
+
+					<div class="row justify-content-center">
+					
+					
+					<div class="col-lg-8 col-md-12 mt-2">
+
+						<form th:object="${freeContent}"
+								enctype="multipart/form-data" method="POST"
+								th:action="@{/admin/process-content}" class="m-2">
+
+	
+								<div class="input-group mt-2">
+									<input type="text" name="title"
+										placeholder="Enter content Title  ." class="form-control"
+										required>
+								</div>
+								
+								<div class="input-group mt-2">
+									<input type="text" name="content"
+										placeholder="Enter Content Description  ." class="form-control"
+										required>
+								</div>
+								
+								<div class="input-group mt-2">
+									<input type="text" name="name1"
+										placeholder="Enter Name of the first link  ." class="form-control"
+										required>
+								</div>
+								
+								<div class="input-group mt-2">
+									<input type="text" name="link1"
+										placeholder="Enter First Link  ." class="form-control"
+										required>
+								</div>
+								
+								<div class="input-group mt-2">
+									<input type="text" name="name2"
+										placeholder="Enter Name of the second link  ." class="form-control"
+										required>
+								</div>
+								
+								<div class="input-group mt-2">
+									<input type="text" name="link2"
+										placeholder="Enter Second Link  ." class="form-control"
+										required>
+								</div>
+								
+								
+								<div class="input-group mt-2">
+									<input type="text" name="name3"
+										placeholder="Enter Name of the third link  ." class="form-control"
+										required>
+								</div>
+								
+								
+								<div class="input-group mt-2">
+									<input type="text" name="link3"
+										placeholder="Enter Third Link  ." class="form-control"
+										required>
+								</div>
+								
+								<div class="input-group mt-2 mb-3">
+									<label class="input-group-text" for="upload">Upload</label>
+									<input type="file" class="form-control"  name="imageName" id="upload" required>
+								</div>
+								
+								<div class="container text-center">
+									<button type="submit" class="btn btn-outline-primary hero_btn">Save</button>
+								</div>
+								
+							</form>
+
+					</div>
+					
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<script>
+		
+		$(document).ready(() => {
+			
+			$(".item").removeClass("active");
+			
+			$("#add-contents").addClass("active");
+			
+			} );
+		
+		</script>
+
+	</section>
+
+</body>
+</html>

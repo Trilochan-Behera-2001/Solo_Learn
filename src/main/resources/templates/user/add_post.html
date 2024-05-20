@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="user/base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+
+		<div class="card mr-3 ml-3">
+
+			<div class="card-body">
+
+				<h3 class="text-center text-secondary fst-italic fw-lighter">Add Posts</h3>
+
+				<div class="container m-1">
+
+					<div class="row justify-content-center" >
+
+						<div class="col-md-8">
+						
+
+							<form  th:object="${posts}"
+								enctype="multipart/form-data" method="POST"
+								th:action="@{/user/process-posts}" class="m-2">
+
+								<div class="input-group mt-2">
+									<select class="form-control" name="category">
+									
+										<option selected disabled>-----Select Cetagry-----</option>
+										<option>Java Programing</option>
+										<option>Python Programing</option>
+										<option>Web Technology</option>
+										<option>Data Science</option>
+										<option>Artificial Inteligence</option>
+
+									</select>
+								</div>
+								
+								<div class="input-group mt-2">
+									<input type="text" name="title"
+										placeholder="Enter Post Title  ." class="form-control"
+										required>
+								</div>
+								
+								<div class="input-group mt-2">
+									<textarea rows="5" name="content"
+										placeholder="Enter Your Content   ." class="form-control"
+										required></textarea>
+								</div>
+								
+								<div class="input-group mt-2">
+									<textarea rows="5" name="code"
+										placeholder="Enter Your Program(if any ..)   ."
+										class="form-control" required></textarea>
+								</div>
+								
+								<div class="input-group mt-2 mb-3">
+									<label class="input-group-text" for="upload">Upload</label>
+									<input type="file" class="form-control"  name="imageName" id="upload" >
+								</div>
+								
+								<div class="container text-center">
+									<button type="submit" class="btn btn-outline-primary hero_btn">Post</button>
+								</div>
+								
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<script>
+		
+		$(document).ready(() => {
+			
+			$(".item").removeClass("active");
+			
+			$("#add-posts").addClass("active");
+			
+			} );
+		
+		</script>
+
+	</section>
+
+</body>
+</html>

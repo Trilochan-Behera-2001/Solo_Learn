@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::Layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<section>
+
+
+		<div class="container-fluid p-0 m-0 text-center">
+			<div class="jumbotron primary-background text-white  page-background">
+
+				<div class="container w3-col 112 w3-center pt-4 pb-3">
+
+					<h1>Contact us</h1>
+
+				</div>
+
+			</div>
+		</div>
+
+
+		<section class="location">
+
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3726.4348499826197!2d85.2633077!3d20.935045199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a18b5e2246737db%3A0x464c86301dac34cb!2sIndira%20Gandhi%20Institute%20Of%20Technology%2C%20Sarang!5e0!3m2!1sen!2sin!4v1686379739849!5m2!1sen!2sin"
+				width="600" height="450" style="border: 0;" allowfullscreen=""
+				loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+		</section>
+
+
+		<div class="container mt-5 fst-italic">
+
+			<div class="row justify-content-center">
+
+				<div class="col-sm-5">
+
+					<div class="container">
+
+						<i class="fa-solid fa-house fa-lg" style="color: #ff5900;"></i>
+						<h5>xyz Road ,ABC Building</h5>
+						<p class="fw-lighter">Dhenkanal,Odisha</p>
+						<i class="fa-solid fa-phone fa-lg" style="color: #ff5900;"></i>
+						<h5>+91 98564-63214</h5>
+						<p class="fw-lighter">Monday to Saturday, 10AM to 6PM</p>
+						<i class="fa-solid fa-envelope fa-lg" style="color: #ff5900;"></i>
+						<h5>helloome@learn.com</h5>
+						<p class="fw-light">Email us your query</p>
+
+
+
+					</div>
+
+				</div>
+
+				<div class="col-sm-5">
+
+
+					<form id="frm" action="#">
+
+						<input type="text" id="fn"
+							class="form-control input-transparent mt-2"
+							placeholder="Enter your Name .."
+							style="border: 1px solid #ff5900;"> <span id="sp1"></span>
+						<input type="text" id="cn"
+							class="form-control input-transparent mt-2" maxlength="10"
+							placeholder="Enter your contact Number .."
+							style="border: 1px solid #ff5900;"> <span id="sp3"></span>
+						<input type="email" id="eid"
+							class="form-control input-transparent mt-2"
+							placeholder="Enter your Email id .."
+							style="border: 1px solid #ff5900;"> <span id="sp4"></span>
+
+						<textarea id="sub" cols="25" rows="5"
+							class="form-control input-transparent mt-2"
+							placeholder="Enter your Subject .."
+							style="border: 1px solid #ff5900;"></textarea>
+
+
+						<button type="submit" id="submit" class="hero_btn btn-sm mt-4">Submit</button>
+
+					</form>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+	</section>
+
+</body>
+</html>
